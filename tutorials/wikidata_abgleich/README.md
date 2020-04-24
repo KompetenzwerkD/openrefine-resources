@@ -27,7 +27,7 @@ Da unsere Namen im Datenset recht eindeutig sind, hat der Reconciliation-Schritt
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata5.png)
 
-## 3. Importiere die aktuellen Daten aus Wikidata
+### 3. Importiere die aktuellen Daten aus Wikidata
 
 Hat man den Reconciliation-Schritt durchgeführt, kann man in OpenRefine nun einfach 'properties' von der verknüpften Datenquelle (hier: Wikidata) als neue Spalte importieren.
 Dazu wählt man einfach `Edit column / Add columns from reconciled values ...` ...
@@ -42,7 +42,7 @@ Die in dem property enthaltenen Daten werden nun als neue Spalte in den Datensat
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata9.png)
 
-## 4. Erstelle eine neue Spalte, welche die alten und neuen Daten vergleicht
+### 4. Erstelle eine neue Spalte, welche die alten und neuen Daten vergleicht
 
 Um den Vergleich der Spalten zu vereinfachen, lohnt es ich manchmal die Datentypen der Spalten zu vereinheitlichen. In unserem Beispiel wurde die neue `date of birth` Spalte aus Wikidata mit dem Datentyp `date` importiert, während unsere `date_of_birth` Spalte vom Datentyp `text`ist.
 
