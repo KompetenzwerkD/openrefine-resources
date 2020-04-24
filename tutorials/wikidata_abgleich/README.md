@@ -5,7 +5,7 @@ Use-Case: Wir haben ein lokales Datenset und wollen überprüfen, ob sich darin 
 Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministischen Autorinnen und Aktivistinnen aus Japan](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/data/japanese_feminist_writers.csv). Wir wollen überpfüfen, ob die im Datenset enthaltenen Geburtsdaten denen auf Wikidata entsprechen. 
 
 
-## 1. Lade ein Datenset in OpenRefine
+## 1. Lade das lokale Datenset in OpenRefine
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata1.png)
 
@@ -42,7 +42,7 @@ Die in dem property enthaltenen Daten werden nun als neue Spalte in den Datensat
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata9.png)
 
-## 4. Erstelle eine Neue Spalte die die alten und neuen Daten vergleicht
+## 4. Erstelle eine neue Spalte, welche die alten und neuen Daten vergleicht
 
 Um den Vergleich der Spalten zu vereinfachen lohnt es ich manchmal die Datentypen der Spalten zu vereinheitlichen. In unserem Beispiel wurde die neue `date of birth` Spalte aus Wikidata mit dem Datentyp `date`importiert, während unsere `date_of_birth` Spalte vom Datentyp `text`ist.
 
