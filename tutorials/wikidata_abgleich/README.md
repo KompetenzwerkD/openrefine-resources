@@ -55,7 +55,7 @@ Um den Datentyp der neuen Spalte in `text` zu ändern wählen wir `Edit cells / 
 
 Dann erstellen wir eine neue Spalte (`Edit column / Add column based on this column`), welche den neuen Wert beinhaltet, wenn sich dieser von dem alten unterscheidet. Ansonsten soll das Feld leer bleiben.
 
-Dazu verwenden wir folgendes Python-Skript
+Dazu verwenden wir folgendes Python-Skript:
 
 ```python
 # mit try/except fangen wir Felder ohne Wert ab
@@ -73,8 +73,10 @@ else:
     return ""
 ```
 
+und benennen die neue Spalte `updated_value`.
+
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata12.png)
 
-In der `updated value` Spalte können wir nun einfach sehen, wenn sich ein Wikidata-Wert von dem in unserem Datenset unterscheidet.
+In der `updated_value` Spalte können wir nun einfach sehen, wenn sich ein Wikidata-Wert von dem in unserem Datenset unterscheidet.
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata13.png)
