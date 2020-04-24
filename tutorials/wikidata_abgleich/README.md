@@ -5,7 +5,7 @@ Use-Case: Wir haben ein lokales Datenset und wollen überprüfen, ob sich darin 
 
 1. Lade eine Datenset in OpenRefine
 
-![](images/openrefine_wikdidata1.png)
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata1.png)
 
 2. Reconcile das Datenset mit Wikidata
 3. Importiere die aktuellen neuen Daten aus Wikidata
