@@ -3,15 +3,58 @@
 Use-Case: Wir haben ein lokales Datenset und wollen überprüfen, ob sich darin enthaltene Informationen von den auf Wikidata eingetragenen Daten unterscheiden.
 
 
-1. Lade eine Datenset in OpenRefine
+1. Lade ein Datenset in OpenRefine
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata1.png)
 
 2. Reconcile das Datenset mit Wikidata
-3. Importiere die aktuellen neuen Daten aus Wikidata
+
+Wir verwenden den Wikidata Reconiliation Service um eine Spalte (`name`) in unserem Datenset mit Wikidata abzugleichen. Dazu wählen wir bei der entsprechenden Spalte `Reconcile / Start reconciling ...` ....
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata2.png)
+
+Und wählen den entsprechenden Service (Wikidata in unserem Fall).
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata3.png)
+
+Um die Ergebnisse zu verbessern könnnen wir noch einen Datentyp wählen. In unserem Fall handelt es sich um feministische Autorinnen und Aktivistinnen aus Japan, wir wählen also Typ 'human/Q5'. 
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata4.png)
+
+Da unsere Namen im Datenset recht eindeutig sind, hat der Reconciliation-Schritt gut funktioniert und hat allen Namen automatisch mit den entsprechenden Wikidata-Einträgen verknüpft.
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata5.png)
+
+3. Importiere die aktuellen Daten aus Wikidata
+
+Hat man den Reconciliation-Schritt durchgeführt kann man in OpenRefine einfach 'properties' von der externen Datenquelle (hier: Wikidata) als neue Spalte importieren.
+Dazu wählt man einfach `Edit column / Add columns from reconciled values ...` ...
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata6.png)
+
+und wählt das entsprechende property.
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata7.png)
+
+Die in dem property enthaltenen Daten werden nun als neue Spalte in den Datensatz eingfügt. Der Spaltenname entspricht dabei dem label des properties (in unserem Fall `date of birth`).
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata9.png)
+
 4. Erstelle eine Neue Spalte die die alten und neuen Daten vergleicht
 
+Um den Vergleich der Spalten zu vereinfachen lohnt es ich manchmal die Datentypen der Spalten zu vereinheitlichen. In unserem Beispiel wurde die neue `date of birth` Spalte aus Wikidata mit dem Datentyp `date`importiert, während unsere `date_of_birth` Spalte vom Datentyp `text`ist.
+
+Um den Datentyp der neuen Spalte in `text` zu ändern wählen wir `Edit cells / Common transforms / To text`
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata11.png)
+
+Dann erstellen wir eine neue Spalte (`Edit column / Add column based on this column`), welche den neuen Wert beinhaltet, wenn sich dieser von dem alten unterscheidet. Ansonsten bleibt das Feld leer
+
+Dazu verwenden wir folgendes kleines Python-Skript
+
 ```python
+# mit try/except fangen wir Felder ohne Wert ab
+# strip() entfernt Leerzeichen am Anfang und Ende des Wertes
 try:
     original = row.record.cells["date_of_birth"].value[0].strip()
 except:
@@ -24,3 +67,10 @@ if new != original:
 else:
     return ""
 ```
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata12.png)
+
+
+In der `updated value` Spalte können wir nun einfach sehen, wenn sich ein Wikidata-Wert von dem in unserem Datenset unterscheidet.
+
+![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata13.png)
