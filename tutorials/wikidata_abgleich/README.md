@@ -1,13 +1,15 @@
-### Abgleich von Daten mit Wikidata
+# Abgleich lokaler Daten mit Wikidata
 
 Use-Case: Wir haben ein lokales Datenset und wollen überprüfen, ob sich darin enthaltene Informationen von den auf Wikidata eingetragenen Daten unterscheiden.
 
+Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministischen Autorinnen und Aktivistinnen aus Japan](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/data/japanese_feminist_writers.csv). Wir wollen überpfüfen, ob die im Datenset enthaltenen Geburtsdaten denen auf Wikidata entsprechen. 
 
-1. Lade ein Datenset in OpenRefine
+
+## 1. Lade ein Datenset in OpenRefine
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata1.png)
 
-2. Reconcile das Datenset mit Wikidata
+## 2. Reconcile das Datenset mit Wikidata
 
 Wir verwenden den Wikidata Reconiliation Service um eine Spalte (`name`) in unserem Datenset mit Wikidata abzugleichen. Dazu wählen wir bei der entsprechenden Spalte `Reconcile / Start reconciling ...` ....
 
@@ -25,7 +27,7 @@ Da unsere Namen im Datenset recht eindeutig sind, hat der Reconciliation-Schritt
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata5.png)
 
-3. Importiere die aktuellen Daten aus Wikidata
+## 3. Importiere die aktuellen Daten aus Wikidata
 
 Hat man den Reconciliation-Schritt durchgeführt kann man in OpenRefine einfach 'properties' von der externen Datenquelle (hier: Wikidata) als neue Spalte importieren.
 Dazu wählt man einfach `Edit column / Add columns from reconciled values ...` ...
@@ -40,7 +42,7 @@ Die in dem property enthaltenen Daten werden nun als neue Spalte in den Datensat
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata9.png)
 
-4. Erstelle eine Neue Spalte die die alten und neuen Daten vergleicht
+## 4. Erstelle eine Neue Spalte die die alten und neuen Daten vergleicht
 
 Um den Vergleich der Spalten zu vereinfachen lohnt es ich manchmal die Datentypen der Spalten zu vereinheitlichen. In unserem Beispiel wurde die neue `date of birth` Spalte aus Wikidata mit dem Datentyp `date`importiert, während unsere `date_of_birth` Spalte vom Datentyp `text`ist.
 
