@@ -11,6 +11,8 @@ Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministisch
 
 ### 2. Reconcile das Datenset mit Wikidata
 
+> [Ausführlichere Video-Einführung zum Reconciliation-Service] (https://www.youtube.com/playlist?list=PL_0jeq3PjvtADzbovAgHNzOFvOlyF6uL1)
+
 Wir verwenden den Wikidata-Reconiliation-Service um eine Spalte in unserem Datenset (`name`) mit Wikidata abzugleichen. Dazu wählen wir bei der entsprechenden Spalte `Reconcile / Start reconciling ...` ....
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata2.png)
@@ -26,6 +28,7 @@ Um die Ergebnisse zu verbessern könnnen wir noch einen Datentyp auswählen. In 
 Da unsere Namen im Datenset recht eindeutig sind, hat der Reconciliation-Schritt gut funktioniert und hat alle Namen automatisch mit den entsprechenden Wikidata-Einträgen verknüpft.
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata5.png)
+
 
 ### 3. Importiere die aktuellen Daten aus Wikidata
 
