@@ -2,34 +2,34 @@
 
 Use-Case: Wir haben ein lokales Datenset und wollen überprüfen, ob sich darin enthaltene Informationen von den auf Wikidata eingetragenen Daten unterscheiden.
 
-Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministischen Autorinnen und Aktivistinnen aus Japan](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/data/japanese_feminist_writers.csv). Wir wollen überpfüfen, ob die im Datenset enthaltenen Geburtsdaten denen auf Wikidata entsprechen. 
+Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministischen Autorinnen und Aktivistinnen aus Japan](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/data/japanese_feminist_writers.csv). Wir wollen überpfüfen, ob die im Datenset enthaltenen Geburtsdaten mit denen auf Wikidata übereinstimmen. 
 
 
-## 1. Lade das lokale Datenset in OpenRefine
+### 1. Lade das lokale Datenset in OpenRefine
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata1.png)
 
-## 2. Reconcile das Datenset mit Wikidata
+### 2. Reconcile das Datenset mit Wikidata
 
-Wir verwenden den Wikidata Reconiliation Service um eine Spalte (`name`) in unserem Datenset mit Wikidata abzugleichen. Dazu wählen wir bei der entsprechenden Spalte `Reconcile / Start reconciling ...` ....
+Wir verwenden den Wikidata-Reconiliation-Service um eine Spalte in unserem Datenset (`name`) mit Wikidata abzugleichen. Dazu wählen wir bei der entsprechenden Spalte `Reconcile / Start reconciling ...` ....
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata2.png)
 
-Und wählen den entsprechenden Service (Wikidata in unserem Fall).
+und wählen den entsprechenden Service (Wikidata in unserem Fall).
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata3.png)
 
-Um die Ergebnisse zu verbessern könnnen wir noch einen Datentyp wählen. In unserem Fall handelt es sich um feministische Autorinnen und Aktivistinnen aus Japan, wir wählen also Typ 'human/Q5'. 
+Um die Ergebnisse zu verbessern könnnen wir noch einen Datentyp auswählen. In unserem Fall handelt es sich um Autorinnen/Aktivistinnen, wir wählen also Typ 'human/Q5'. 
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata4.png)
 
-Da unsere Namen im Datenset recht eindeutig sind, hat der Reconciliation-Schritt gut funktioniert und hat allen Namen automatisch mit den entsprechenden Wikidata-Einträgen verknüpft.
+Da unsere Namen im Datenset recht eindeutig sind, hat der Reconciliation-Schritt gut funktioniert und hat alle Namen automatisch mit den entsprechenden Wikidata-Einträgen verknüpft.
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata5.png)
 
 ## 3. Importiere die aktuellen Daten aus Wikidata
 
-Hat man den Reconciliation-Schritt durchgeführt kann man in OpenRefine einfach 'properties' von der externen Datenquelle (hier: Wikidata) als neue Spalte importieren.
+Hat man den Reconciliation-Schritt durchgeführt, kann man in OpenRefine nun einfach 'properties' von der verknüpften Datenquelle (hier: Wikidata) als neue Spalte importieren.
 Dazu wählt man einfach `Edit column / Add columns from reconciled values ...` ...
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata6.png)
@@ -44,15 +44,15 @@ Die in dem property enthaltenen Daten werden nun als neue Spalte in den Datensat
 
 ## 4. Erstelle eine neue Spalte, welche die alten und neuen Daten vergleicht
 
-Um den Vergleich der Spalten zu vereinfachen lohnt es ich manchmal die Datentypen der Spalten zu vereinheitlichen. In unserem Beispiel wurde die neue `date of birth` Spalte aus Wikidata mit dem Datentyp `date`importiert, während unsere `date_of_birth` Spalte vom Datentyp `text`ist.
+Um den Vergleich der Spalten zu vereinfachen, lohnt es ich manchmal die Datentypen der Spalten zu vereinheitlichen. In unserem Beispiel wurde die neue `date of birth` Spalte aus Wikidata mit dem Datentyp `date` importiert, während unsere `date_of_birth` Spalte vom Datentyp `text`ist.
 
 Um den Datentyp der neuen Spalte in `text` zu ändern wählen wir `Edit cells / Common transforms / To text`
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata11.png)
 
-Dann erstellen wir eine neue Spalte (`Edit column / Add column based on this column`), welche den neuen Wert beinhaltet, wenn sich dieser von dem alten unterscheidet. Ansonsten bleibt das Feld leer
+Dann erstellen wir eine neue Spalte (`Edit column / Add column based on this column`), welche den neuen Wert beinhaltet, wenn sich dieser von dem alten unterscheidet. Ansonsten soll das Feld leer bleiben.
 
-Dazu verwenden wir folgendes kleines Python-Skript
+Dazu verwenden wir folgendes Python-Skript
 
 ```python
 # mit try/except fangen wir Felder ohne Wert ab
@@ -71,7 +71,6 @@ else:
 ```
 
 ![](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/images/openrefine_wikidata12.png)
-
 
 In der `updated value` Spalte können wir nun einfach sehen, wenn sich ein Wikidata-Wert von dem in unserem Datenset unterscheidet.
 
