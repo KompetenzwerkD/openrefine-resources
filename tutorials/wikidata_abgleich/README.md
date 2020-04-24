@@ -11,7 +11,7 @@ Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministisch
 
 ### 2. Reconcile das Datenset mit Wikidata
 
-> [Ausführlichere Video-Einführung zum Reconciliation-Service] (https://www.youtube.com/playlist?list=PL_0jeq3PjvtADzbovAgHNzOFvOlyF6uL1)
+> [Ausführlichere Video-Einführung zum Reconciliation-Service](https://www.youtube.com/playlist?list=PL_0jeq3PjvtADzbovAgHNzOFvOlyF6uL1)
 
 Wir verwenden den Wikidata-Reconiliation-Service um eine Spalte in unserem Datenset (`name`) mit Wikidata abzugleichen. Dazu wählen wir bei der entsprechenden Spalte `Reconcile / Start reconciling ...` ....
 
