@@ -3,7 +3,7 @@
 > Use-Case: Wir haben ein lokales Datenset und wollen überprüfen, ob sich darin enthaltene Informationen von den auf Wikidata eingetragenen Daten unterscheiden.
 
 
-Für dieses Tutorial haben wir ein (sehr) kleines [Testdatenset mit feministischen Autorinnen und Aktivistinnen aus Japan](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/data/japanese_feminist_writers.csv). Wir wollen überpfüfen, ob die im Datenset enthaltenen Geburtsdaten mit denen auf Wikidata übereinstimmen. 
+Für dieses Tutorial nehmen wir ein (sehr) kleines [Testdatenset mit feministischen Autorinnen und Aktivistinnen aus Japan](https://github.com/KompetenzwerkD/openrefine-resources/blob/master/tutorials/wikidata_abgleich/data/japanese_feminist_writers.csv). Wir wollen überpfüfen, ob die im Datenset enthaltenen Geburtsdaten mit denen auf Wikidata übereinstimmen. 
 
 > Eine gute Einführung in die grundlegenden Funktionalitäten von OpenRefine: [Library Carpentry: OpenRefine](https://librarycarpentry.org/lc-open-refine/)
 
