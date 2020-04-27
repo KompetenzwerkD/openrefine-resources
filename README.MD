@@ -1,5 +1,9 @@
 # OpenRefine Ressourcen
 
+OpenRefine ist eine Open-Source-Applikation für Datenbereinigung bzw. -transformation. Es erlaubt das Einlesen  von Daten im CSV/TSV, XML, RDF, JSON und Google Spreadsheets Format. 
+
+Datentransformationsschritte werden mittels Skripte durchgeführt, welche in [GREL (General Refine Expression Language)](https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language), [Python](https://www.python.org/)/[Jython](https://www.jython.org/) oder [Clojure](https://clojure.org/) verfasst werden können.  
+
 [Website und Dokumentation](https://openrefine.org/)
 
 [Reconciliation API Spezifikation](https://reconciliation-api.github.io/specs/0.1/)
