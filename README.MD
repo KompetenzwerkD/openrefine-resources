@@ -4,10 +4,11 @@ OpenRefine ist eine Open-Source-Applikation für Datenbereinigung bzw. -transfor
 
 Datentransformationsschritte werden mittels Skripte durchgeführt, welche in [GREL (General Refine Expression Language)](https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language), [Python](https://www.python.org/)/[Jython](https://www.jython.org/) oder [Clojure](https://clojure.org/) verfasst werden können.  
 
-[Website und Dokumentation](https://openrefine.org/)
+[OpenRefine Website und Dokumentation](https://openrefine.org/)
+
+OpenRefine ist auch ein nützliches Tool zum Abgleich bzw. Matching von Daten. Über Reconciliation-Schnittstellen können Werte in Datenfeldern mit Einträgen in externen Datenbanken/Wissensbasen verknüpft werden (sofern eine entsprechende API implementiert wurde). Standardmäßig ist in OpenRefine der Reconciliation-Dienst für [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) inkludiert, es existieren aber auch Schnittstellen für weitere wichtige Normdatensätze wie [VIAF](http://viaf.org/) oder [GND](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html), welche ohne großen Aufwand hinzugefügt werden können. 
 
 [Reconciliation API Spezifikation](https://reconciliation-api.github.io/specs/0.1/)
-
 
 
 
