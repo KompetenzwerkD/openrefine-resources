@@ -28,8 +28,10 @@ OpenRefine ist auch ein n√ºtzliches Tool zum Abgleich bzw. Matching von Daten. √
 * [Using OpenRefine to reconcile named entities](https://mnylc.org/fellows/2017/03/17/using-openrefine-to-reconcile-name-entities/)
 * [Reconciling mit GND Daten](http://blog.lobid.org/2018/08/27/openrefine.html)
 
+### Bearbeitung von Wikidata
+* [Using OpenRefine with Wikidata for the first time](https://addshore.com/2020/07/using-openrefine-with-wikidata-for-the-first-time/)
 
-## Reconsiliation Endpoints
+## Reconciliation Endpoints
 
 * List of Reconciliation endpoints - http://okfnlabs.org/reconcile-csv/
 * Wikidata - https://tools.wmflabs.org/openrefine-wikidata/
